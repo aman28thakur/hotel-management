@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay | GrandStay</title>
+    <link rel="stylesheet" href="css/hotel.css">
+</head>
+<body class="booking-page">
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo">GrandStay<span>.</span></a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="services.html">Services</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Heading -->
+        <section class="booking-hero">
+            <p class="section-tag">YOUR STAY, YOUR WAY</p>
+            <h1>Book Your <span>Stay.</span></h1>
+            <p>Choose your room and plan your next comfortable experience.</p>
+        </section>
+
+        <!-- Booking Form -->
+        <section class="booking-layout">
+
+            <div class="booking-form-panel">
+                <p class="section-tag">RESERVATION DETAILS</p>
+                <h2>Complete Your Booking</h2>
+
+                <form action="payment.html" method="get">
+
+                    <div class="booking-field">
+                        <label for="guest-name">Full Name</label>
+                        <input type="text" id="guest-name" name="guest_name"
+                               placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="booking-field">
+                        <label for="guest-email">Email Address</label>
+                        <input type="email" id="guest-email" name="email"
+                               placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="booking-field">
+                        <label for="guest-phone">Phone Number</label>
+                        <input type="tel" id="guest-phone" name="phone"
+                               placeholder="10-digit mobile number"
+                               pattern="[0-9]{10}" maxlength="10" required>
+                    </div>
+
+                    <div class="booking-field">
+                        <label for="room-type">Select Room</label>
+                        <select id="room-type" name="room_type" required>
+                            <option value="">Choose a room</option>
+                            <option value="standard">Standard Room — ₹2,500/night</option>
+                            <option value="deluxe">Deluxe Room — ₹4,000/night</option>
+                            <option value="suite">Luxury Suite — ₹6,500/night</option>
+                        </select>
+                    </div>
+
+                    <div class="booking-two-columns">
+                        <div class="booking-field">
+                            <label for="check-in">Check-in Date</label>
+                            <input type="date" id="check-in" name="check_in" required>
+                        </div>
+
+                        <div class="booking-field">
+                            <label for="check-out">Check-out Date</label>
+                            <input type="date" id="check-out" name="check_out" required>
+                        </div>
+                    </div>
+
+                    <div class="booking-field">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Select guests</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                        </select>
+                    </div>
+
+                    <div class="booking-field">
+                        <label for="requests">Special Requests (Optional)</label>
+                        <textarea id="requests" name="requests" rows="4"
+                                  placeholder="Any additional requirements?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn booking-submit">
+                        Continue to Payment
+                    </button>
+
+                </form>
+            </div>
+
+            <!-- Information Panel -->
+            <aside class="booking-info-panel">
+                <p class="section-tag">THE GRANDSTAY EXPERIENCE</p>
+                <h2>Your comfort comes first.</h2>
+
+                <p>
+                    Review your selected dates and room details before
+                    proceeding to the payment summary.
+                </p>
+
+                <div class="booking-info-item">
+                    <span>01</span>
+                    <div>
+                        <h3>Choose Your Room</h3>
+                        <p>Select the room category that suits your stay.</p>
+                    </div>
+                </div>
+
+                <div class="booking-info-item">
+                    <span>02</span>
+                    <div>
+                        <h3>Enter Your Details</h3>
+                        <p>Provide your contact and reservation information.</p>
+                    </div>
+                </div>
+
+                <div class="booking-info-item">
+                    <span>03</span>
+                    <div>
+                        <h3>Review Your Booking</h3>
+                        <p>Proceed to the payment summary for review.</p>
+                    </div>
+                </div>
+
+                <div class="booking-notice">
+                    <strong>Note</strong>
+                    <p>
+                        Room availability and final charges will be verified
+                        after backend integration.
+                    </p>
+                </div>
+            </aside>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>GrandStay Hotel Management System</p>
+        <p>Designed by Abhay Khandwal</p>
+    </footer>
+
+</body>
+</html>

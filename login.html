@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | GrandStay Hotel</title>
+    <link rel="stylesheet" href="css/hotel.css">
+</head>
+<body class="auth-page">
+
+    <header class="navbar">
+        <a href="index.html" class="logo">GrandStay<span>.</span></a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#rooms">Rooms</a>
+            <a href="index.html#services">Services</a>
+            <a href="register.html" class="login-btn">Create Account</a>
+        </nav>
+    </header>
+
+    <main class="auth-wrapper">
+        <section class="auth-card">
+            <a href="index.html" class="back-link">← Back to Home</a>
+
+            <p class="eyebrow">WELCOME BACK</p>
+            <h1>Sign in to GrandStay</h1>
+            <p class="auth-description">
+                Access your account and continue your booking journey.
+            </p>
+
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="auth-submit">
+                    Sign In →
+                </button>
+            </form>
+
+            <p class="auth-switch">
+                Don't have an account?
+                <a href="register.html">Create one</a>
+            </p>
+
+            <p class="auth-notice">
+                Demo interface only. Account authentication will be added
+                when the PHP and MySQL backend is connected.
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="index.html" class="logo">GrandStay<span>.</span></a>
+        <p>Hotel Management System | Academic Project</p>
+    </footer>
+
+</body>
+</html>

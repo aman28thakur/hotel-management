@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | GrandStay</title>
+    <meta name="description" content="Review your hotel booking and select a payment method at GrandStay.">
+    <link rel="stylesheet" href="css/hotel.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">GrandStay<span>.</span></a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="services.html">Services</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="login.html">Login</a>
+            <a href="register.html" class="nav-btn">Register</a>
+        </nav>
+    </header>
+
+    <main class="payment-page">
+
+        <section class="payment-heading">
+            <p class="payment-label">GRANDSTAY RESERVATIONS</p>
+            <h1>Complete Your <span>Booking</span></h1>
+            <p>Review your reservation details and choose a payment method.</p>
+        </section>
+
+        <div class="payment-layout">
+
+            <section class="payment-panel">
+                <h2>Payment Method</h2>
+                <p class="payment-description">
+                    Select how you would like to pay for your stay.
+                </p>
+
+                <form action="dashboard.html" method="get">
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment_method"
+                               value="upi" required>
+                        <span>
+                            <strong>UPI</strong>
+                            <small>Google Pay, PhonePe, BHIM</small>
+                        </span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment_method"
+                               value="card">
+                        <span>
+                            <strong>Debit / Credit Card</strong>
+                            <small>Visa, Mastercard and other cards</small>
+                        </span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment_method"
+                               value="net_banking">
+                        <span>
+                            <strong>Net Banking</strong>
+                            <small>Pay using your bank account</small>
+                        </span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment_method"
+                               value="pay_at_hotel">
+                        <span>
+                            <strong>Pay at Hotel</strong>
+                            <small>Pay at the property, subject to its policy</small>
+                        </span>
+                    </label>
+
+                    <label class="payment-terms">
+                        <input type="checkbox" name="terms" required>
+                        <span>
+                            I confirm that my booking details are correct.
+                        </span>
+                    </label>
+
+                    <button type="submit" class="btn payment-submit">
+                        Confirm Demo Booking
+                    </button>
+
+                    <p class="demo-notice">
+                        Academic project demonstration only. No real
+                        payment will be processed.
+                    </p>
+
+                </form>
+            </section>
+
+            <aside class="payment-summary">
+                <h2>Booking Summary</h2>
+
+                <div class="summary-row">
+                    <span>Hotel</span>
+                    <strong>GrandStay</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Room Type</span>
+                    <strong>Selected Room</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Price per Night</span>
+                    <strong>As per room category</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Check-in</span>
+                    <strong>To be confirmed</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Check-out</span>
+                    <strong>To be confirmed</strong>
+                </div>
+
+                <div class="summary-total">
+                    <span>Total Amount</span>
+                    <strong>Calculated after booking integration</strong>
+                </div>
+
+                <p class="summary-note">
+                    Your actual booking details and total amount will
+                    be displayed here after PHP and MySQL integration.
+                </p>
+
+                <a href="booking.html" class="back-link">
+                    ← Return to Booking
+                </a>
+            </aside>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>GrandStay Hotel Management System</p>
+        <p>Designed by Abhay Khandwal</p>
+        <p>&copy; 2026 GrandStay. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

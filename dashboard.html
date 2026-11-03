@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | GrandStay Hotel</title>
+    <link rel="stylesheet" href="css/hotel.css">
+</head>
+<body class="dashboard-page">
+
+    <header class="navbar">
+        <a href="index.html" class="logo">GrandStay<span>.</span></a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="services.html">Services</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="login.html" class="nav-btn">Logout</a>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-welcome">
+            <div>
+                <p class="section-tag">CUSTOMER PANEL</p>
+                <h1>Welcome Back, <span>Guest!</span></h1>
+                <p>Manage your stays and explore your next experience with GrandStay.</p>
+            </div>
+
+            <a href="rooms.html" class="btn">Book a Room</a>
+        </section>
+
+        <section class="dashboard-stats">
+            <div class="stat-card">
+                <div class="stat-icon">▣</div>
+                <p>Total Bookings</p>
+                <h2>02</h2>
+                <span>Your booking history</span>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">⌂</div>
+                <p>Upcoming Stays</p>
+                <h2>01</h2>
+                <span>Plan your next visit</span>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">₹</div>
+                <p>Total Payments</p>
+                <h2>₹4,000</h2>
+                <span>Sample amount</span>
+            </div>
+        </section>
+
+        <section class="dashboard-content">
+            <div class="dashboard-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="section-tag">YOUR ACTIVITY</p>
+                        <h2>Recent Bookings</h2>
+                    </div>
+                    <a href="booking.html" class="text-link">New Booking →</a>
+                </div>
+
+                <div class="booking-table-wrap">
+                    <table class="booking-table">
+                        <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Room</th>
+                                <th>Check-in</th>
+                                <th>Check-out</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#GS1001</td>
+                                <td>Deluxe Room</td>
+                                <td>Sample date</td>
+                                <td>Sample date</td>
+                                <td><span class="status confirmed">Confirmed</span></td>
+                            </tr>
+                            <tr>
+                                <td>#GS1002</td>
+                                <td>Standard Room</td>
+                                <td>Sample date</td>
+                                <td>Sample date</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="sample-note">
+                    Demo records only. Actual booking details will come from the database.
+                </p>
+            </div>
+
+            <aside class="dashboard-panel quick-panel">
+                <p class="section-tag">QUICK ACCESS</p>
+                <h2>What would you like to do?</h2>
+
+                <a href="rooms.html" class="quick-link">
+                    <span class="quick-icon">⌂</span>
+                    <span>
+                        <strong>Explore Rooms</strong>
+                        <small>Find your perfect stay</small>
+                    </span>
+                    <span class="quick-arrow">→</span>
+                </a>
+
+                <a href="booking.html" class="quick-link">
+                    <span class="quick-icon">▦</span>
+                    <span>
+                        <strong>Make a Booking</strong>
+                        <small>Choose your dates</small>
+                    </span>
+                    <span class="quick-arrow">→</span>
+                </a>
+
+                <a href="services.html" class="quick-link">
+                    <span class="quick-icon">✧</span>
+                    <span>
+                        <strong>Hotel Services</strong>
+                        <small>Discover extra comforts</small>
+                    </span>
+                    <span class="quick-arrow">→</span>
+                </a>
+
+                <a href="payment.html" class="quick-link">
+                    <span class="quick-icon">₹</span>
+                    <span>
+                        <strong>Payments</strong>
+                        <small>View payment options</small>
+                    </span>
+                    <span class="quick-arrow">→</span>
+                </a>
+            </aside>
+        </section>
+
+        <section class="dashboard-tip">
+            <div>
+                <p class="section-tag">A LITTLE EXTRA COMFORT</p>
+                <h2>Your next getaway starts here.</h2>
+                <p>Explore our rooms and choose the stay that suits you best.</p>
+            </div>
+            <a href="rooms.html" class="btn">Explore Rooms</a>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© GrandStay Hotel Management System | Designed by Abhay Khandwal</p>
+    </footer>
+
+</body>
+</html>

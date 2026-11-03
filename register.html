@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | GrandStay Hotel</title>
+    <link rel="stylesheet" href="css/hotel.css">
+</head>
+<body class="auth-page">
+
+    <header class="navbar">
+        <a href="index.html" class="logo">GrandStay<span>.</span></a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#rooms">Rooms</a>
+            <a href="index.html#services">Services</a>
+            <a href="login.html" class="login-btn">Login</a>
+        </nav>
+    </header>
+
+    <main class="auth-wrapper">
+        <section class="auth-card register-card">
+            <a href="index.html" class="back-link">← Back to Home</a>
+
+            <p class="eyebrow">BECOME A GUEST</p>
+            <h1>Create your account</h1>
+            <p class="auth-description">
+                Register with GrandStay to get started with your stay.
+            </p>
+
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                        autocomplete="tel"
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        title="Enter a 10-digit phone number"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea
+                        id="address"
+                        name="address"
+                        rows="2"
+                        placeholder="Enter your address"
+                        autocomplete="street-address"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Create Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input
+                        type="password"
+                        id="confirm-password"
+                        name="confirm_password"
+                        placeholder="Re-enter your password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="auth-submit">
+                    Create Account →
+                </button>
+            </form>
+
+            <p class="auth-switch">
+                Already registered?
+                <a href="login.html">Sign in</a>
+            </p>
+
+            <p class="auth-notice">
+                Demo interface only. Registration and password verification
+                will work after backend integration.
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="index.html" class="logo">GrandStay<span>.</span></a>
+        <p>Hotel Management System | Academic Project</p>
+    </footer>
+
+</body>
+</html>
