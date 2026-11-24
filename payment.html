@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment | GrandStay</title>
+
+    <meta name="description" content="Review your hotel booking and select a payment method at GrandStay.">
+
+    <link rel="stylesheet" href="css/hotel.css">
+</head>
+
+<body class="payment-page-body">
+
+    <header class="navbar">
+        <a href="index.html" class="logo">GrandStay<span>.</span></a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="services.html">Services</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="login.html">Login</a>
+            <a href="register.html" class="nav-btn">Register</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="payment-heading">
+            <p class="section-tag">GRANDSTAY RESERVATIONS</p>
+
+            <h1>Complete Your <span>Booking.</span></h1>
+
+            <p>
+                Review your reservation details and choose a payment method.
+            </p>
+        </section>
+
+        <div class="payment-layout">
+
+            <section class="payment-panel">
+
+                <p class="section-tag">SECURE CHECKOUT</p>
+                <h2>Payment Method</h2>
+
+                <p class="payment-description">
+                    Select how you would like to pay for your stay.
+                </p>
+
+                <form id="payment-form" action="confirmation.html" method="get">
+
+                    <input type="hidden" name="guest_name" id="form-name">
+                    <input type="hidden" name="email" id="form-email">
+                    <input type="hidden" name="phone" id="form-phone">
+                    <input type="hidden" name="room_type" id="form-room">
+                    <input type="hidden" name="check_in" id="form-checkin">
+                    <input type="hidden" name="check_out" id="form-checkout">
+                    <input type="hidden" name="guests" id="form-guests">
+                    <input type="hidden" name="requests" id="form-requests">
+                    <input type="hidden" name="total" id="form-total">
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment_method"
+                               value="UPI" required>
+                        <span>
+                            <strong>UPI</strong>
+                            <small>Google Pay, PhonePe, BHIM</small>
+                        </span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment_method"
+                               value="Card">
+                        <span>
+                            <strong>Debit / Credit Card</strong>
+                            <small>Visa, Mastercard and other cards</small>
+                        </span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment_method"
+                               value="Net Banking">
+                        <span>
+                            <strong>Net Banking</strong>
+                            <small>Pay using your bank account</small>
+                        </span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment_method"
+                               value="Pay at Hotel">
+                        <span>
+                            <strong>Pay at Hotel</strong>
+                            <small>Pay at the property, subject to its policy</small>
+                        </span>
+                    </label>
+
+                    <label class="payment-terms">
+                        <input type="checkbox" name="terms" required>
+                        <span>
+                            I confirm that my booking details are correct.
+                        </span>
+                    </label>
+
+                    <button type="submit" class="btn payment-submit">
+                        Confirm Demo Booking
+                    </button>
+
+                    <p class="demo-notice">
+                        Academic project demonstration only.
+                        No real payment will be processed.
+                    </p>
+
+                </form>
+            </section>
+
+            <aside class="payment-summary">
+
+                <p class="section-tag">YOUR RESERVATION</p>
+                <h2>Booking Summary</h2>
+
+                <div class="summary-row">
+                    <span>Hotel</span>
+                    <strong>GrandStay</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Guest Name</span>
+                    <strong id="display-name">Not provided</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Email</span>
+                    <strong id="display-email">Not provided</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Phone</span>
+                    <strong id="display-phone">Not provided</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Room Type</span>
+                    <strong id="display-room">Not selected</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Price per Night</span>
+                    <strong id="display-price">₹0</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Check-in</span>
+                    <strong id="display-checkin">Not selected</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Check-out</span>
+                    <strong id="display-checkout">Not selected</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Guests</span>
+                    <strong id="display-guests">0</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Total Nights</span>
+                    <strong id="display-nights">0</strong>
+                </div>
+
+                <div class="summary-total">
+                    <span>Total Amount</span>
+                    <strong id="display-total">₹0</strong>
+                </div>
+
+                <p class="summary-note" id="booking-message">
+                    Your estimated booking amount is calculated from
+                    the room category and selected dates.
+                </p>
+
+                <a href="booking.html" class="back-link">
+                    ← Return to Booking
+                </a>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>GrandStay Hotel Management System</p>
+        <p>Designed by Abhay Khandwal</p>
+        <p>&copy; 2026 GrandStay. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        const roomData = {
+            standard: { name: "Standard Room", price: 2500, maxGuests: 2 },
+            deluxe: { name: "Deluxe Room", price: 4000, maxGuests: 2 },
+            suite: { name: "Luxury Suite", price: 6500, maxGuests: 3 }
+        };
+
+        const booking = {
+            name: params.get("guest_name") || "",
+            email: params.get("email") || "",
+            phone: params.get("phone") || "",
+            room: params.get("room_type") || "",
+            checkin: params.get("check_in") || "",
+            checkout: params.get("check_out") || "",
+            guests: Number(params.get("guests") || 0),
+            requests: params.get("requests") || ""
+        };
+
+        const selectedRoom = roomData[booking.room];
+
+        function displayValue(id, value) {
+            document.getElementById(id).textContent = value || "Not provided";
+        }
+
+        function formatDate(date) {
+            if (!date) return "Not selected";
+
+            const parts = date.split("-");
+            return `${parts[2]}-${parts[1]}-${parts[0]}`;
+        }
+
+        function showError(message) {
+            document.getElementById("booking-message").textContent = message;
+            document.getElementById("payment-form").style.display = "none";
+        }
+
+        if (!selectedRoom || !booking.name || !booking.email ||
+            !booking.phone || !booking.checkin || !booking.checkout ||
+            !booking.guests) {
+
+            showError("Booking details are missing. Please return to the booking page and complete the form.");
+
+        } else {
+
+            const start = new Date(booking.checkin + "T00:00:00");
+            const end = new Date(booking.checkout + "T00:00:00");
+
+            const nights = Math.round((end - start) / 86400000);
+            const total = nights * selectedRoom.price;
+
+            if (
+                !Number.isFinite(nights) ||
+                nights < 1 ||
+                booking.guests > selectedRoom.maxGuests ||
+                !/^[0-9]{10}$/.test(booking.phone) ||
+                !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(booking.email)
+            ) {
+                showError("Your booking details are invalid. Please return to the booking page and check your information.");
+            } else {
+
+                displayValue("display-name", booking.name);
+                displayValue("display-email", booking.email);
+                displayValue("display-phone", booking.phone);
+                displayValue("display-room", selectedRoom.name);
+                displayValue("display-price", "₹" + selectedRoom.price.toLocaleString("en-IN"));
+                displayValue("display-checkin", formatDate(booking.checkin));
+                displayValue("display-checkout", formatDate(booking.checkout));
+                displayValue("display-guests", booking.guests);
+                displayValue("display-nights", nights);
+
+                document.getElementById("display-total").textContent =
+                    "₹" + total.toLocaleString("en-IN");
+
+                document.getElementById("form-name").value = booking.name;
+                document.getElementById("form-email").value = booking.email;
+                document.getElementById("form-phone").value = booking.phone;
+                document.getElementById("form-room").value = booking.room;
+                document.getElementById("form-checkin").value = booking.checkin;
+                document.getElementById("form-checkout").value = booking.checkout;
+                document.getElementById("form-guests").value = booking.guests;
+                document.getElementById("form-requests").value = booking.requests;
+                document.getElementById("form-total").value = total;
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay | GrandStay</title>
+    <link rel="stylesheet" href="css/hotel.css">
+</head>
+
+<body class="booking-page">
+
+    <header class="navbar">
+        <a href="index.html" class="logo">GrandStay<span>.</span></a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="services.html">Services</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="booking-hero">
+            <p class="section-tag">YOUR STAY, YOUR WAY</p>
+            <h1>Book Your <span>Stay.</span></h1>
+            <p>Choose your room and plan your next comfortable experience.</p>
+        </section>
+
+        <section class="booking-layout">
+
+            <div class="booking-form-panel">
+
+                <p class="section-tag">RESERVATION DETAILS</p>
+                <h2>Complete Your Booking</h2>
+
+                <form id="booking-form" action="payment.html" method="get">
+
+                    <div class="booking-field">
+                        <label for="guest-name">Full Name</label>
+                        <input type="text" id="guest-name" name="guest_name"
+                               placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="booking-field">
+                        <label for="guest-email">Email Address</label>
+                        <input type="email" id="guest-email" name="email"
+                               placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="booking-field">
+                        <label for="guest-phone">Phone Number</label>
+                        <input type="tel" id="guest-phone" name="phone"
+                               placeholder="10-digit mobile number"
+                               pattern="[0-9]{10}" maxlength="10" required>
+                    </div>
+
+                    <div class="booking-field">
+                        <label for="room-type">Select Room</label>
+                        <select id="room-type" name="room_type" required>
+                            <option value="">Choose a room</option>
+                            <option value="standard">Standard Room</option>
+                            <option value="deluxe">Deluxe Room</option>
+                            <option value="suite">Luxury Suite</option>
+                        </select>
+                    </div>
+
+                    <div class="booking-two-columns">
+
+                        <div class="booking-field">
+                            <label for="check-in">Check-in Date</label>
+                            <input type="date" id="check-in" name="check_in" required>
+                        </div>
+
+                        <div class="booking-field">
+                            <label for="check-out">Check-out Date</label>
+                            <input type="date" id="check-out" name="check_out" required>
+                        </div>
+
+                    </div>
+
+                    <div class="booking-field">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Select guests</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                        </select>
+                    </div>
+
+                    <div class="booking-field">
+                        <label for="requests">Special Requests (Optional)</label>
+                        <textarea id="requests" name="requests" rows="4"
+                                  placeholder="Any additional requirements?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn booking-submit">
+                        Continue to Payment
+                    </button>
+
+                </form>
+            </div>
+
+            <aside class="booking-info-panel">
+
+                <p class="section-tag">THE GRANDSTAY EXPERIENCE</p>
+                <h2>Your comfort comes first.</h2>
+
+                <p>
+                    Review your selected dates and room details before
+                    proceeding to the payment summary.
+                </p>
+
+                <div class="booking-info-item">
+                    <span>01</span>
+                    <div>
+                        <h3>Choose Your Room</h3>
+                        <p>Select the room category that suits your stay.</p>
+                    </div>
+                </div>
+
+                <div class="booking-info-item">
+                    <span>02</span>
+                    <div>
+                        <h3>Enter Your Details</h3>
+                        <p>Provide your contact and reservation information.</p>
+                    </div>
+                </div>
+
+                <div class="booking-info-item">
+                    <span>03</span>
+                    <div>
+                        <h3>Review Your Booking</h3>
+                        <p>Proceed to the payment summary for review.</p>
+                    </div>
+                </div>
+
+                <div class="booking-notice">
+                    <strong>Note</strong>
+                    <p>
+                        Availability and final charges will be verified
+                        by the hotel booking system after backend integration.
+                    </p>
+                </div>
+
+                <div class="booking-summary">
+                    <p class="section-tag">YOUR ESTIMATE</p>
+                    <h3>Booking Summary</h3>
+
+                    <p>Room: <strong id="summary-room">Not selected</strong></p>
+                    <p>Price: <strong id="summary-price">₹0 / night</strong></p>
+                    <p>Nights: <strong id="summary-nights">0</strong></p>
+
+                    <div class="summary-total">
+                        <span>Estimated Total</span>
+                        <strong id="summary-total">₹0</strong>
+                    </div>
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>GrandStay Hotel Management System</p>
+        <p>Designed by Abhay Khandwal</p>
+    </footer>
+
+    <script>
+        const roomType = document.getElementById("room-type");
+        const checkIn = document.getElementById("check-in");
+        const checkOut = document.getElementById("check-out");
+        const guests = document.getElementById("guests");
+        const form = document.getElementById("booking-form");
+
+        const roomData = {
+            standard: { name: "Standard Room", price: 2500, maxGuests: 2 },
+            deluxe: { name: "Deluxe Room", price: 4000, maxGuests: 2 },
+            suite: { name: "Luxury Suite", price: 6500, maxGuests: 3 }
+        };
+
+        const today = new Date();
+        const todayString = [
+            today.getFullYear(),
+            String(today.getMonth() + 1).padStart(2, "0"),
+            String(today.getDate()).padStart(2, "0")
+        ].join("-");
+
+        checkIn.min = todayString;
+        checkOut.min = todayString;
+
+        const params = new URLSearchParams(window.location.search);
+        const selectedRoom = params.get("room");
+
+        if (roomData[selectedRoom]) {
+            roomType.value = selectedRoom;
+        }
+
+        function updateGuestOptions() {
+            const selected = roomData[roomType.value];
+
+            guests.value = "";
+
+            Array.from(guests.options).forEach(option => {
+                if (option.value) {
+                    option.disabled = selected &&
+                        Number(option.value) > selected.maxGuests;
+                }
+            });
+
+            updateSummary();
+        }
+
+        function updateSummary() {
+            const selected = roomData[roomType.value];
+
+            let nights = 0;
+
+            if (checkIn.value && checkOut.value) {
+                const start = new Date(checkIn.value + "T00:00:00");
+                const end = new Date(checkOut.value + "T00:00:00");
+
+                nights = Math.round((end - start) / 86400000);
+                if (nights < 0) nights = 0;
+            }
+
+            const price = selected ? selected.price : 0;
+            const total = price * nights;
+
+            document.getElementById("summary-room").textContent =
+                selected ? selected.name : "Not selected";
+
+            document.getElementById("summary-price").textContent =
+                "₹" + price.toLocaleString("en-IN") + " / night";
+
+            document.getElementById("summary-nights").textContent = nights;
+
+            document.getElementById("summary-total").textContent =
+                "₹" + total.toLocaleString("en-IN");
+        }
+
+        roomType.addEventListener("change", updateGuestOptions);
+
+        checkIn.addEventListener("change", function () {
+            checkOut.min = checkIn.value || todayString;
+
+            if (checkOut.value && checkOut.value <= checkIn.value) {
+                checkOut.value = "";
+            }
+
+            updateSummary();
+        });
+
+        checkOut.addEventListener("change", updateSummary);
+
+        form.addEventListener("submit", function (event) {
+            if (checkIn.value < todayString) {
+                event.preventDefault();
+                alert("Check-in date cannot be in the past.");
+                return;
+            }
+
+            if (checkOut.value <= checkIn.value) {
+                event.preventDefault();
+                alert("Check-out date must be after check-in date.");
+                return;
+            }
+
+            const selected = roomData[roomType.value];
+
+            if (!selected) {
+                event.preventDefault();
+                alert("Please select a room.");
+                return;
+            }
+
+            if (Number(guests.value) > selected.maxGuests) {
+                event.preventDefault();
+                alert("The selected room cannot accommodate that many guests.");
+            }
+        });
+
+        updateGuestOptions();
+    </script>
+
+</body>
+</html>
